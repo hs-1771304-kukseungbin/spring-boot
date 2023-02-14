@@ -23,7 +23,7 @@ public class ItemRepository {
     }
 
     //상품 조회
-    public Item findONe(Long id) {
+    public Item findOne(Long id) {
         return em.find(Item.class, id);
     }
 
