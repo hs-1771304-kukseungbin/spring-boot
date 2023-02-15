@@ -8,6 +8,7 @@ import jpacoffee.jpacafe.domain.item.Item;
 import jpacoffee.jpacafe.repository.ItemRepository;
 import jpacoffee.jpacafe.repository.MemberRepository;
 import jpacoffee.jpacafe.repository.OrderRepository;
+import jpacoffee.jpacafe.repository.OrderSearch;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.weaver.ast.Or;
 import org.springframework.stereotype.Service;
@@ -56,7 +57,7 @@ public class OrderService {
     }
     //검색
 
-//    public List<Order> findOrder(OrderSearch orderSearch) {
-//        return orderRepository.findAll(orderSearch);
-//    }
+    public List<Order> findOrder(OrderSearch orderSearch) {
+        return orderRepository.findAllByString(orderSearch);
+    }
 }
